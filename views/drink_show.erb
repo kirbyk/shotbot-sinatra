@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">ShotBot</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container center">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @drink.name %>
+        </h3>
+      </div>
+      <ul class="list-group">
+        <% if !@drink.ingredient_name_1.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_1 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_1).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_2.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_2 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_2).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_3.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_3 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_3).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_4.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_4 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_4).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_5.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_5 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_5).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_6.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_6 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_6).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_7.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_7 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_7).name %>
+          </li>
+        <% end %>
+
+        <% if !@drink.ingredient_name_8.nil? %>
+          <li class="list-group-item">
+            <%= @drink.ingredient_volume_8 %> shots of
+            <%= Ingredient.find(@drink.ingredient_name_8).name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+      <a href='<%= "/drink/#{@drink.id}/make" %>' class="btn btn-primary btn-lg">
+        <span class="glyphicon glyphicon-glass" aria-hidden="true"></span> Make it!
+      </a>
+  </div>
+</body>
+</html>
+
